@@ -4,9 +4,9 @@
 ## File structure
 com.example.spassion
 - activities
- - LoginActivity.java
- - CreateAccountActivity.java
- - MainActivity.java
+  - LoginActivity.java
+  - CreateAccountActivity.java
+  - MainActivity.java
 - fragments
 
 ## Naming conventions

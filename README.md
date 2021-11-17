@@ -3,8 +3,11 @@
 **Not finalised**
 ## File structure
 com.example.spassion
-  - Authentication
-  - Main
+- activities
+ - LoginActivity.java
+ - CreateAccountActivity.java
+ - MainActivity.java
+- fragments
 
 ## Naming conventions
 - Java classes use PascalCasing

@@ -1,12 +1,12 @@
-## SPassion App
+# SPassion App
 
-# File structure
+## File structure
 com.example.spassion
 - activities
   - Authentication
   - Main
 
-# Naming conventions
+## Naming conventions
 - Java classes use PascalCasing
 - Java folders use camelCasing
 - Activity layout name start with activity_

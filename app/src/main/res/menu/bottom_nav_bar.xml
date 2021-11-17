@@ -16,7 +16,7 @@
         android:id="@+id/menu_sign_up"
         android:enabled="true"
         android:title="Sign Up"
-        android:icon="@drawable/ic_menu_home"
+        android:icon="@drawable/ic_menu_sign_up"
         />
     <item
         android:id="@+id/menu_events"

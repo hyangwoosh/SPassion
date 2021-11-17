@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tkl48/Documents/Year_2_Sem 2/ANDE/Codes/Ca1/ANDE-CA1/app/src/main/res/layout/activity_create_account.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/tkl48/Documents/Year_2_Sem 2/ANDE/Codes/Ca1/ANDE-CA1/app/src/main/res/layout/activity_login.xml" value="0.276268115942029" />
         <entry key="..\:/Users/tkl48/Documents/Year_2_Sem 2/ANDE/Codes/Ca1/ANDE-CA1/app/src/main/res/layout/activity_main.xml" value="0.276268115942029" />
+        <entry key="..\:/Users/tkl48/Documents/Year_2_Sem 2/ANDE/Codes/Ca1/ANDE-CA1/app/src/main/res/menu/bottom_nav_bar.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/tkl48/Documents/Year_2_Sem 2/ANDE/Codes/Ca1/ANDE-CA1/app/src/main/res/menu/bottom_nav_item.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

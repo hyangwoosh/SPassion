@@ -15,3 +15,4 @@ com.example.spassion
 - Activity layout name start with activity_
 - Activity layout use snake_casing
 - Color name use snake_casing
+- Drawable prefixes: ic_ (icons), bg_ (backgrounds), img (images).

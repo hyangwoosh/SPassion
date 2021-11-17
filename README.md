@@ -1,8 +1,8 @@
 # SPassion App
 
+**Not finalised**
 ## File structure
 com.example.spassion
-- activities
   - Authentication
   - Main
 

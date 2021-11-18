@@ -37,7 +37,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\tkl48\Downloads\assets\signUpIcon.png" />
+                                                <entry key="imagePath" value="C:\Users\tkl48\Downloads\assets\SPassionLogoWhite.png" />
                                                 <entry key="opacityPercent" value="80" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
@@ -74,10 +74,10 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\tkl48\Downloads\assets\signUpIcon.png" />
-                                      <entry key="outputName" value="ic_menu_sign_up" />
+                                      <entry key="imageAsset" value="C:\Users\tkl48\Downloads\assets\SPassionLogoWhite.png" />
+                                      <entry key="outputName" value="img_logo_spassion_white" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="ef233c" />
+                                      <entry key="themeColor" value="ffffff" />
                                     </map>
                                   </option>
                                 </PersistentState>

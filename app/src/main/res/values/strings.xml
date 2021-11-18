@@ -1,3 +1,13 @@
 <resources>
+    <!--  Naming convention: {where}_{description}  -->
     <string name="app_name">SPassion</string>
+    <!--  Home Fragment  -->
+    <string name="home_ats">Key in CCA ATS Code</string>
+    <string name="home_btn_submit">Submit</string>
+    <string name="home_news">News and Updates</string>
+    <string name="home_carousel_title_1">Covid-19 Advisory</string>
+    <string name="home_carousel_content_1">Please follow the examples posted on the photos above</string>
+    <string name="home_heading_cca">This week\'s CCA highlight</string>
+    <string name="home_highlight_title">SP Mixed Martial Arts</string>
+    <string name="home_highlight_description">Mixed Martial Arts (MMA) takes the best from each martial arts form and synergies it into a unique sport...</string>
 </resources>

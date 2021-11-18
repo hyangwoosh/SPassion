@@ -9,7 +9,7 @@ com.example.spassion
   - MainActivity.java
 - fragments
   - HomeFragment.java
-  - ExploreFragmnet.java
+  - ExploreFragment.java
   - SignUpFragment.java
   - EventsFragment.java
   - ProfileFragment.java 
@@ -22,3 +22,4 @@ com.example.spassion
 - Color name use snake_casing
 - Drawable prefixes: ic_ (icons), bg_ (backgrounds), img (images).
 - String resources format: {where}_{description} e.g. home_carousel_title
+- ID use camelCasing

@@ -8,6 +8,11 @@ com.example.spassion
   - CreateAccountActivity.java
   - MainActivity.java
 - fragments
+  - HomeFragment.java
+  - ExploreFragmnet.java
+  - SignUpFragment.java
+  - EventsFragment.java
+  - ProfileFragment.java 
 
 ## Naming conventions
 - Java classes use PascalCasing
@@ -16,3 +21,4 @@ com.example.spassion
 - Activity layout use snake_casing
 - Color name use snake_casing
 - Drawable prefixes: ic_ (icons), bg_ (backgrounds), img (images).
+- String resources format: {where}_{description} e.g. home_carousel_title

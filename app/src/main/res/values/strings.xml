@@ -1,6 +1,7 @@
 <resources>
     <!--  Naming convention: {where}_{description}  -->
     <string name="app_name">SPassion</string>
+
     <!--  Home Fragment  -->
     <string name="home_ats">Key in CCA ATS Code</string>
     <string name="home_btn_submit">Submit</string>
@@ -11,4 +12,18 @@
     <string name="home_highlight_title">SP Mixed Martial Arts</string>
     <string name="home_highlight_date">Posted on 23/11/2020</string>
     <string name="home_highlight_description">Mixed Martial Arts (MMA) takes the best from each martial arts form and synergies it into a unique sport...</string>
+
+    <!--  Sign Up Fragment  -->
+    <string name="sign_up_label_1">Selected CCA</string>
+    <string name="sign_up_label_2_1">Admin Number</string>
+    <string name="sign_up_label_2_2">(without p)</string>
+    <string name="sign_up_label_3">School Email</string>
+    <string name="sign_up_label_4">Full Name</string>
+    <string name="sign_up_label_5">Contact Number</string>
+    <string name="sign_up_value_1">2491883</string>
+    <string name="sign_up_value_2">Sharlene@ichat.sp.edu.sg</string>
+    <string name="sign_up_value_3">Sharlene Tan Si Qi</string>
+    <string name="sign_up_value_4">95588101</string>
+    <string name="sign_up_btn_sign_up">Sign Up</string>
+    <string name="sign_up_success">Your application has been sent to the cca Excos! Please check your email for further updates!</string>
 </resources>

@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
 >
 
@@ -25,7 +25,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.251"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/img_spassion_white" />
@@ -34,7 +34,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="84dp"
             android:text="@string/home_ats"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
@@ -47,12 +47,14 @@
             android:id="@+id/editTextNumber"
             android:layout_width="311dp"
             android:layout_height="49dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="112dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="116dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:hint="e.g. 231232"
+            android:maxLength="6"
             android:inputType="number"
+            android:paddingLeft="10dp"
             android:textColor="#000000"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +63,7 @@
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="144dp"
+            android:layout_marginStart="136dp"
             android:layout_marginTop="232dp"
             android:text="@string/home_news"
             android:textAlignment="center"
@@ -73,8 +75,8 @@
             android:id="@+id/button2"
             android:layout_width="141dp"
             android:layout_height="50dp"
-            android:layout_marginStart="136dp"
-            android:layout_marginTop="176dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="172dp"
             android:backgroundTint="@color/secondary"
             android:text="@string/home_btn_submit"
             app:layout_constraintStart_toStartOf="parent"
@@ -144,13 +146,37 @@
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/home_heading_cca"
             android:textColor="#000000"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <HorizontalScrollView
+        android:layout_width="391dp"
+        android:layout_height="333dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

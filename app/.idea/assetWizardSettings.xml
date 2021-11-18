@@ -330,7 +330,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/person/baseline_person_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/star_outline/baseline_star_outline_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -340,7 +340,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_menu_profile" />
+                            <entry key="color" value="ff0000" />
+                            <entry key="outputName" value="ic_star" />
                             <entry key="sourceFile" value="C:\Users\tkl48\Documents\Year_2_Sem 2\ANDE\Codes\Ca1\ANDE-CA1\app" />
                           </map>
                         </option>

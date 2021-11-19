@@ -25,9 +25,10 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void signIn(View view) {
-        if(!(tfemail.getText().toString().equals("")&&tfpassword.getText().toString().equals(""))){
-            startActivity(new Intent(LoginActivity.this,SignOutActivity.class));
-        }
-
+//        if(!(tfemail.getText().toString().equals("")&&tfpassword.getText().toString().equals(""))){
+//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//        }
+        // Allow full access to app for now
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
     }
 }

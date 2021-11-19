@@ -21,5 +21,6 @@ com.example.spassion
 - Activity layout use snake_casing
 - Color name use snake_casing
 - Drawable prefixes: ic_ (icons), bg_ (backgrounds), img (images).
+- All String should be stored in strings.xml
 - String resources format: {where}_{description} e.g. home_carousel_title
 - ID use camelCasing

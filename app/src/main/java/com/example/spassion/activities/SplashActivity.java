@@ -2,23 +2,28 @@ package com.example.spassion.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.spassion.R;
 
 public class SplashActivity extends AppCompatActivity {
+    ImageView logo;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         // Launch the layout -> splash.xml
         setContentView(R.layout.activity_splash);
+        logo = findViewById(R.id.imageView2);
+        // Animation
+        logo.animate().translationY(-2000).setDuration(1500);
         Thread splashThread = new Thread() {
 
             public void run() {
                 try {
                     // sleep time in milliseconds (2000 = 2sec)
-                    sleep(2000);
+                    sleep(1500);
                 }  catch(InterruptedException e) {
                     // Trace the error
                     e.printStackTrace();

@@ -16,8 +16,7 @@ public class SplashActivity extends AppCompatActivity {
         // Launch the layout -> splash.xml
         setContentView(R.layout.activity_splash);
         logo = findViewById(R.id.imageView2);
-        // Animation
-        logo.animate().translationY(-2000).setDuration(1500);
+        logo.animate().translationY(-2000).setDuration(1500).setStartDelay(500);
         Thread splashThread = new Thread() {
 
             public void run() {

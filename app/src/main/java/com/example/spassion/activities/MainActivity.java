@@ -80,4 +80,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, CampusMapActivity.class));
     }
 
+    public void handleGoToShop(View view) {
+        startActivity(new Intent(MainActivity.this, ShopActivity.class));
+    }
+
 } // End of MainActivity

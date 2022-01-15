@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "918517092134",
+    "project_id": "spassion-241a9",
+    "storage_bucket": "spassion-241a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:918517092134:android:a31b8a34e57224b0123be7",
+        "android_client_info": {
+          "package_name": "com.example.spassion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "918517092134-a0fmphauo9r9qppmccu45ij7j0ijjpej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpdKDAXDEUbXALwAcdMEsKzSqlmqmo-Os"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "918517092134-a0fmphauo9r9qppmccu45ij7j0ijjpej.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

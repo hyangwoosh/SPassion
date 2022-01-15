@@ -74,4 +74,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
     } // End of handleSignOut
 
+    public void handleGoToCampusMap(View view) {
+        Toast.makeText(MainActivity.this, "You are viewing the campus map",
+                Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, CampusMapActivity.class));
+    }
+
 } // End of MainActivity

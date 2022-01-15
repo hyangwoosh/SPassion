@@ -48,6 +48,16 @@
         <activity
             android:name=".activities.CampusMapActivity"
             android:exported="true"/>
+        <activity
+            android:name=".activities.CheckoutActivity"
+            android:exported="true"/>
+        <activity
+            android:noHistory="true"
+            android:name=".activities.CheckoutSuccessfulActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".activities.ShopActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

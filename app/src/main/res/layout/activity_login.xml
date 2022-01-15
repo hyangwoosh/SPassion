@@ -63,8 +63,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/border_radious"
+                        android:ems="10"
                         android:hint="Password"
-                        android:inputType="textPersonName"
+                        android:inputType="textPassword"
+
                         android:padding="10dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 

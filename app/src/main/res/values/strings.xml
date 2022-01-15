@@ -26,4 +26,20 @@
     <string name="sign_up_value_4">95588101</string>
     <string name="sign_up_btn_sign_up">Sign Up</string>
     <string name="sign_up_success">Your application has been sent to the cca Excos! Please check your email for further updates!</string>
+
+    <!--  Shop Activity  -->
+    <string name="shop_heading_1">Shop</string>
+    <string name="shop_body_1">S$19.90</string>
+    <string name="shop_body_2">Buy an SP shirt to support SPassion</string>
+    <string name="shop_btn_1">Purchase</string>
+    <string name="shop_btn_2">Back to Home</string>
+
+    <!--  Checkout Activity  -->
+    <string name="checkout_heading_1">Checkout</string>
+    <string name="checkout_body_1">You are paying S$19.90 for</string>
+    <string name='checkout_body_2'>SPassion Shirt</string>
+
+    <!--  Checkout Success Activity  -->
+    <string name="checkout_success_btn_back">Back to Home!</string>
+    <string name="checkout_success_body_1">Please collect your shirt at T2148, Project INC room ^_^</string>
 </resources>

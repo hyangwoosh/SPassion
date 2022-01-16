@@ -1,13 +1,31 @@
 package com.example.spassion.activities;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,13 +37,19 @@ import com.example.spassion.fragments.ProfileFragment;
 import com.example.spassion.fragments.SignUpFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.vision.Frame;
+import com.google.android.gms.vision.text.TextBlock;
+import com.google.android.gms.vision.text.TextRecognizer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final int REQUEST_CAMERA_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Set default fragment when MainActivity first loads i.e. HomeFragment
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+        // Camera configurations
+        // Check if permission to access camera is granted
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            // Request user for permission to access the camera
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.CAMERA
+            }, REQUEST_CAMERA_CODE);
+        }
     } // End of onCreate
 
     // This method is called in onCreate
@@ -90,6 +123,59 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
                 break;
             }
+        }
+    }
+
+    public void handleOCRClick(View view) {
+        // Initiate crop image activity
+        CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(MainActivity.this);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Toast.makeText(MainActivity.this, "test!",
+                    Toast.LENGTH_LONG).show();
+                Uri resultUri = result.getUri();
+                try {
+//                    ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), resultUri);
+//                    Bitmap bitmap = ImageDecoder.decodeBitmap(source);
+                    Bitmap bitmap2 = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
+                    getTextFromImage(bitmap2);
+                }
+                catch (Exception ex) {
+                    ex.printStackTrace();
+                    Toast.makeText(MainActivity.this, "This is my Toast message!",
+                            Toast.LENGTH_LONG).show();
+                }
+        }
+    }
+
+    private void getTextFromImage(Bitmap bitmap) {
+        TextRecognizer recognizer = new TextRecognizer.Builder(this).build();
+        if (!recognizer.isOperational()) {
+            Log.d("error", "error");
+            Toast.makeText(this,"Error occurred!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Frame frame = new Frame.Builder().setBitmap(bitmap).build();
+            SparseArray<TextBlock> textBlockSparseArray = recognizer.detect(frame);
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < textBlockSparseArray.size(); i++) {
+                TextBlock textBlock = textBlockSparseArray.valueAt(i);
+                stringBuilder.append(textBlock.getValue());
+                stringBuilder.append("\n");
+            }
+
+            String recognizedText = stringBuilder.toString();
+            if (recognizedText != "") {
+                EditText atsInput = (EditText) findViewById(R.id.editTextNumber);
+                atsInput.setText(recognizedText);
+            }
+            Log.d("ran", recognizedText + " ");
         }
     }
 

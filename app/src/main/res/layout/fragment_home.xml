@@ -73,12 +73,24 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="141dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="124dp"
+            android:layout_width="193dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="172dp"
             android:backgroundTint="@color/secondary"
             android:text="@string/home_btn_submit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_ocr"
+            android:layout_width="101dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="248dp"
+            android:layout_marginTop="172dp"
+            android:backgroundTint="@color/stripe_purple"
+            android:onClick="handleOCRClick"
+            android:text="@string/home_btn_ocr"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

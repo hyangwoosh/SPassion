@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.spassion">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="true" />
 
+    <uses-permission-sdk-23
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:required="true" />
+    <uses-permission-sdk-23
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:required="true" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +19,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SPassion">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!--version--><!-- make sure added-->
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" /><!-- barcode,face,ocr make sure added-->
+        <!-- ..... -->
         <!--
      The API key for Google Maps-based APIs is defined as a string resource.
      (See the file "res/values/google_maps_api.xml").
@@ -25,6 +43,15 @@
             android:name=".activities.SplashActivity"
             android:exported="true"
             android:noHistory="true" >
+<!--            &lt;!&ndash; This is to tell the app to start from login &ndash;&gt;-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true">
             <!-- This is to tell the app to start from login -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,12 +59,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
-            android:exported="true">
-        </activity>
-        <activity
             android:name=".activities.MainActivity"
             android:exported="true">
+
         </activity>
         <activity
             android:name=".activities.SignOutActivity"
@@ -58,6 +82,9 @@
         <activity
             android:name=".activities.ShopActivity"
             android:exported="true"/>
+        <activity
+            android:theme="@style/Theme.AppCompat.DayNight"
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
     </application>
 
 </manifest>

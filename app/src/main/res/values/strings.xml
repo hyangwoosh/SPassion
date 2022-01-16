@@ -5,6 +5,7 @@
     <!--  Home Fragment  -->
     <string name="home_ats">Key in CCA ATS Code</string>
     <string name="home_btn_submit">Submit</string>
+    <string name="home_btn_ocr">OCR</string>
     <string name="home_news">News and Updates</string>
     <string name="home_carousel_title_1">Covid-19 Advisory</string>
     <string name="home_carousel_content_1">Please follow the examples posted on the photos above</string>

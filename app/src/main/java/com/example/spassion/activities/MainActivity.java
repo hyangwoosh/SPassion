@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spassion.R;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,21 +69,28 @@ public class MainActivity extends AppCompatActivity {
                 }; // End of onNavigationItemSelected
             }; // End of NavigationBarView.OnItemSelectedListener
 
-    public void handleSignOut(View view) {
-        LoginActivity.mAuth.signOut();
-        Toast.makeText(MainActivity.this, "Successfully logged out.",
-                Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MainActivity.this, LoginActivity.class));
-    } // End of handleSignOut
+    public void handleProfileLinks(View view) {
+        int viewID = view.getId();
 
-    public void handleGoToCampusMap(View view) {
-        Toast.makeText(MainActivity.this, "You are viewing the campus map",
-                Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MainActivity.this, CampusMapActivity.class));
-    }
-
-    public void handleGoToShop(View view) {
-        startActivity(new Intent(MainActivity.this, ShopActivity.class));
+        switch (viewID) {
+            case R.id.profile_link_campus_map: {
+                Toast.makeText(MainActivity.this, "You are viewing the campus map",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, CampusMapActivity.class));
+                break;
+            }
+            case R.id.profile_link_shop: {
+                startActivity(new Intent(MainActivity.this, ShopActivity.class));
+                break;
+            }
+            case R.id.profile_link_log_out: {
+                LoginActivity.mAuth.signOut();
+                Toast.makeText(MainActivity.this, "Successfully logged out.",
+                        Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                break;
+            }
+        }
     }
 
 } // End of MainActivity

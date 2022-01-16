@@ -42,6 +42,7 @@ import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.android.material.shape.EdgeTreatment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -137,8 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            Toast.makeText(MainActivity.this, "test!",
-                    Toast.LENGTH_LONG).show();
+
                 Uri resultUri = result.getUri();
                 try {
 //                    ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), resultUri);
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 catch (Exception ex) {
                     ex.printStackTrace();
-                    Toast.makeText(MainActivity.this, "This is my Toast message!",
+                    Toast.makeText(MainActivity.this, "An error occured!",
                             Toast.LENGTH_LONG).show();
                 }
         }
@@ -177,6 +177,23 @@ public class MainActivity extends AppCompatActivity {
             }
             Log.d("ran", recognizedText + " ");
         }
+    }
+
+    public void handleSubmitATS(View view) {
+        EditText editTextATS = (EditText) findViewById(R.id.editTextNumber);
+
+        if (editTextATS.getText().toString() != "") {
+            Toast.makeText(MainActivity.this, "Your ATS has been successfully submitted",
+                    Toast.LENGTH_LONG).show();
+
+            editTextATS.setText("");
+        }
+        else {
+            Toast.makeText(MainActivity.this, "Error! Empty input",
+                    Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
 } // End of MainActivity

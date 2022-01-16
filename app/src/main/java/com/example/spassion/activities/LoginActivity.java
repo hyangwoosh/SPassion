@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,9 +19,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+
+    // Variable declarations
     EditText tfemail,tfpassword;
     public static FirebaseAuth mAuth = FirebaseAuth.getInstance();
     public static FirebaseUser currentUser = null;
+    public static final String loginPref = "LoginPref";
+    public static final String loginPrefEmail = "loginPrefEmail";
+    public static final String loginPrefPassword = "loginPrefPassword";
+    SharedPreferences prefs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,36 +37,66 @@ public class LoginActivity extends AppCompatActivity {
         tfpassword=findViewById(R.id.tfpassword);
         tfemail=findViewById(R.id.tfemail);
 
+        // Shared preference
+        prefs = getSharedPreferences(loginPref, MODE_PRIVATE);
+        String email = prefs.getString(loginPrefEmail, "");
+        String password = prefs.getString(loginPrefPassword, "");
+
+        tfemail.setText(email);
+        tfpassword.setText(password);
+
+        // Firebase authentication
         mAuth = FirebaseAuth.getInstance();
         if (mAuth != null) {
             mAuth.signOut();
             currentUser = mAuth.getCurrentUser();
         }
 
-        // User is already signed in
+        // Check if user is already signed in
         if (currentUser != null) {
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
-    }
+    } // End of onCreate
+
+
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        tfpassword=findViewById(R.id.tfpassword);
+        tfemail=findViewById(R.id.tfemail);
+
+        prefs = getSharedPreferences(loginPref, MODE_PRIVATE);
+        String email = tfemail.getText().toString();
+        String password = tfpassword.getText().toString();
+
+        // Get the text from the EditText field
+        SharedPreferences.Editor editor = prefs.edit();
+
+        // Store into the SharedPreferences
+        editor.putString(loginPrefEmail,email);
+        editor.putString(loginPrefPassword,password);
+        editor.commit();
+
+    } // End of onPause
+
 
     public void goToSignUpScreen(View view) {
 
         startActivity(new Intent(this,SignUpActivity.class));
-    }
+    } // End of goToSignUpScreen
 
     public void signIn(View view) {
 
         String email = tfemail.getText().toString();
         String password = tfpassword.getText().toString();
 
-        Log.d("login: ", email);
-        Log.d("login: ", password);
 
         if (email.equals("") || password.equals("")) {
             Toast.makeText(LoginActivity.this, "Login failed.",
                     Toast.LENGTH_SHORT).show();
             return;
-        }
+        } // End of if
 
 //        Firebase login
         mAuth.signInWithEmailAndPassword(email, password)
@@ -69,6 +107,16 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("login: ", "success");
+                            prefs = getSharedPreferences(loginPref, MODE_PRIVATE);
+
+                            // Get the text from the EditText field
+                            SharedPreferences.Editor editor = prefs.edit();
+
+                            // Store into the SharedPreferences
+                            editor.putString(loginPrefEmail,email);
+                            editor.putString(loginPrefPassword,password);
+                            editor.commit();
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         } else {
@@ -78,10 +126,5 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
-
-//        // Allow full access to app for now
-//        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-    }
-
-
-}
+    } // End of signIn
+} // End of class

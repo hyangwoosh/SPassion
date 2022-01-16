@@ -72,12 +72,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/home_btn_submit_ats"
             android:layout_width="193dp"
             android:layout_height="51dp"
             android:layout_marginStart="40dp"
             android:layout_marginTop="172dp"
             android:backgroundTint="@color/secondary"
+            android:onClick="handleSubmitATS"
             android:text="@string/home_btn_submit"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

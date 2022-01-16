@@ -1,6 +1,12 @@
 # SPassion App
+Contains features such as
+- Text Recognition from Google ML
+- Stripe Payment Element
+- Firebase Authentication
+- Google Maps (Android)
+- Photo taking and Cropping feature
+- Bottom Navigation
 
-**Not finalised**
 ## File structure
 com.example.spassion
 - activities

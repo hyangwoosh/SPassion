@@ -7,9 +7,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.spassion.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class SignUpFragment extends Fragment {
     @Override
@@ -18,15 +26,31 @@ public class SignUpFragment extends Fragment {
 
         //get the spinner from the xml.
         Spinner dropdown = view.findViewById(R.id.spinner1);
-        //create a list of items for the spinner.
-        String[] items = new String[]{
-                "SP Mixed Martial Arts", "SP Mind Sport", "SP Basketball", "SP Bowling", "SP Cyclists", "SP Badminton", "SP Adventurers"
-        };
+
+        ArrayList<String> list = new ArrayList<>();
         //create an adapter to describe how the items are displayed, adapters are used in several places in android.
         //There are multiple variations of this, but this is the basic variant.
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, items);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_spinner_dropdown_item, list);
         //set the spinners adapter to the previously created one.
         dropdown.setAdapter(adapter);
+
+        // Get list of CCAs from firebase realtime database
+        DatabaseReference reference = FirebaseDatabase.getInstance("https://spassion-241a9-default-rtdb.asia-southeast1.firebasedatabase.app").getReference().child("CCA");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
+            for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                list.add(snapshot.getValue().toString());
+            }
+            adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         return view;
 

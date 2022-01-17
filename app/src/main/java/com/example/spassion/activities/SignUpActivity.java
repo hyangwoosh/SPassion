@@ -92,6 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
                             btnResend.setEnabled(false);
                             btnSignUp.setText("Back to Login");
                             StartCounter();
+                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("Create Account", "createUserWithEmail:failure", task.getException());

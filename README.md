@@ -3,9 +3,11 @@ Contains features such as
 - Text Recognition from Google ML
 - Stripe Payment Element
 - Firebase Authentication
+- Firebase Realtime Database
 - Google Maps (Android)
 - Photo taking and Cropping feature
 - Bottom Navigation
+- Shared PReferences
 
 ## File structure
 com.example.spassion

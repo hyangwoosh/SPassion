@@ -7,22 +7,10 @@
         android:icon="@drawable/ic_menu_home"
         />
     <item
-        android:id="@+id/menu_explore"
-        android:enabled="true"
-        android:title="Explore"
-        android:icon="@drawable/ic_menu_explore"
-        />
-    <item
         android:id="@+id/menu_sign_up"
         android:enabled="true"
         android:title="Sign Up"
         android:icon="@drawable/ic_menu_sign_up"
-        />
-    <item
-        android:id="@+id/menu_events"
-        android:enabled="true"
-        android:title="Events"
-        android:icon="@drawable/ic_menu_events"
         />
     <item
         android:id="@+id/menu_profile"

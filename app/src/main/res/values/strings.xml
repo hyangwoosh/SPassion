@@ -35,12 +35,12 @@
     <string name="profile_heading_2">CCA Services</string>
     <string name="profile_heading_3">Account Options</string>
     <string name="profile_heading_4">Hello!</string>
-    <string name="profile_body_1">CCA Status</string>
-    <string name="profile_body_2">CCA Attendance History</string>
-    <string name="profile_body_3">CCA Withdrawal</string>
+    <string name="profile_body_1">CCA Status (Coming soon)</string>
+    <string name="profile_body_2">CCA Attendance History (Coming soon)</string>
+    <string name="profile_body_3">CCA Withdrawal (Coming soon)</string>
     <string name="profile_body_4">Campus Map</string>
     <string name="profile_body_5">Account Settings</string>
-    <string name="profile_body_6">Contact Developer</string>
+    <string name="profile_body_6">Contact Developer (Coming soon)</string>
     <string name="profile_body_7">Visit Shop</string>
     <string name="profile_body_8">Log out</string>
 

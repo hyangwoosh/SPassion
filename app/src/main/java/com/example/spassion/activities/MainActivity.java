@@ -1,10 +1,5 @@
 package com.example.spassion.activities;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,11 +8,9 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.ImageDecoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -26,25 +19,17 @@ import android.util.SparseArray;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.spassion.R;
-import com.example.spassion.fragments.EventsFragment;
-import com.example.spassion.fragments.ExploreFragment;
 import com.example.spassion.fragments.HomeFragment;
 import com.example.spassion.fragments.ProfileFragment;
 import com.example.spassion.fragments.SignUpFragment;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.android.material.shape.EdgeTreatment;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -85,14 +70,8 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.menu_home:
                             selectedFragment = new HomeFragment();
                             break;
-                        case R.id.menu_explore:
-                            selectedFragment = new ExploreFragment();
-                            break;
                         case R.id.menu_sign_up:
                             selectedFragment = new SignUpFragment();
-                            break;
-                        case R.id.menu_events:
-                            selectedFragment = new EventsFragment();
                             break;
                         case R.id.menu_profile:
                             selectedFragment = new ProfileFragment();

@@ -5,22 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="279dp"
-        android:layout_height="583dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sp_shirt" />
-
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="28dp"
         android:text="@string/shop_heading_1"
         android:textColor="@color/stripe_primary"
         android:textSize="34sp"
@@ -28,12 +18,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="279dp"
+        android:layout_height="583dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sp_shirt" />
+
     <TextView
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="536dp"
+        android:layout_marginTop="488dp"
         android:text="@string/shop_body_1"
         android:textColor="@color/stripe_purple"
         android:textStyle="bold"
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="568dp"
+        android:layout_marginTop="516dp"
         android:text="@string/shop_body_2"
         android:textColor="@color/stripe_primary"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
         android:layout_width="280dp"
         android:layout_height="49dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="616dp"
+        android:layout_marginTop="544dp"
         android:backgroundTint="@color/stripe_purple"
         android:onClick="handlePurchase"
         android:text="@string/shop_btn_1"
@@ -68,11 +68,24 @@
         android:layout_width="282dp"
         android:layout_height="48dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="672dp"
+        android:layout_marginTop="600dp"
         android:backgroundTint="@color/stripe_primary"
         android:onClick="handleBackToHomeFromPurchase"
         android:text="@string/shop_btn_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="648dp"
+        app:adSize="320x50"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

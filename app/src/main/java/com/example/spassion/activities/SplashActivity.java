@@ -7,12 +7,24 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.spassion.R;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView logo;
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
+
+        // Google AdMob
+        // Need to initialize admob only once
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
         // Launch the layout -> splash.xml
         setContentView(R.layout.activity_splash);
         logo = findViewById(R.id.imageView2);

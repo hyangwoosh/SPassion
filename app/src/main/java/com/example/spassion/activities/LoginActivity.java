@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
     public static final String loginPrefPassword = "loginPrefPassword";
     SharedPreferences prefs;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,17 +79,14 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString(loginPrefEmail,email);
         editor.putString(loginPrefPassword,password);
         editor.commit();
-
     } // End of onPause
 
 
     public void goToSignUpScreen(View view) {
-
         startActivity(new Intent(this,SignUpActivity.class));
     } // End of goToSignUpScreen
 
     public void signIn(View view) {
-
         String email = tfemail.getText().toString();
         String password = tfpassword.getText().toString();
 

@@ -1,6 +1,5 @@
 package com.example.spassion.activities;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -12,39 +11,37 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.spassion.R;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
-public class ShopActivity extends AppCompatActivity {
-    private AdView mAdView;
+public class TestingImageProcessing extends AppCompatActivity {
     Button b1;
     ImageView im;
 
     private Bitmap bmp;
     private Bitmap operation;
-    double red, green, blue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop);
+        setContentView(R.layout.testing123);
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-        b1 = (Button) findViewById(R.id.button7);
+        b1 = (Button) findViewById(R.id.button2);
         im = (ImageView) findViewById(R.id.imageView4);
 
         BitmapDrawable abmp = (BitmapDrawable) im.getDrawable();
         bmp = abmp.getBitmap();
+
     }
 
-    public void handlePurchase(View view) {
-        startActivity(new Intent(ShopActivity.this, CheckoutActivity.class));
-    }
-
-    public void handleBackToHomeFromPurchase(View view) {
-        startActivity(new Intent(ShopActivity.this, MainActivity.class));
+    public static Bitmap sharpen123(Bitmap src, double weight) {
+        double[][] SharpConfig = new double[][] {
+                { 0 , -2    , 0  },
+                { -2, weight, -2 },
+                { 0 , -2    , 0  }
+        };
+        ConvolutionMatrix convMatrix = new ConvolutionMatrix(3);
+        convMatrix.applyConfig(SharpConfig);
+        convMatrix.Factor = weight - 8;
+        return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
     }
 
     public void sharpen(View view) {
@@ -58,21 +55,15 @@ public class ShopActivity extends AppCompatActivity {
         convMatrix.applyConfig(SharpConfig);
         convMatrix.Factor = 3;
 
-        Bitmap someBmp = ConvolutionMatrix.computeConvolution3x3(operation, convMatrix);
-        im.setImageBitmap(someBmp);
+        im.setImageBitmap(ConvolutionMatrix.computeConvolution3x3(operation, convMatrix));
     }
 
-    public void doGamma(View view) {
-        // define rgb
-        red = 1.8;
-        green = 1.8;
-        blue = 1.8;
-
+    public static Bitmap doGamma(Bitmap src, double red, double green, double blue) {
         // create output image
-        Bitmap bmOut = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), bmp.getConfig());
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
         // get image size
-        int width = bmp.getWidth();
-        int height = bmp.getHeight();
+        int width = src.getWidth();
+        int height = src.getHeight();
         // color information
         int A, R, G, B;
         int pixel;
@@ -101,7 +92,7 @@ public class ShopActivity extends AppCompatActivity {
         for(int x = 0; x < width; ++x) {
             for(int y = 0; y < height; ++y) {
                 // get pixel color
-                pixel = bmp.getPixel(x, y);
+                pixel = src.getPixel(x, y);
                 A = Color.alpha(pixel);
                 // look up gamma
                 R = gammaR[Color.red(pixel)];
@@ -113,28 +104,6 @@ public class ShopActivity extends AppCompatActivity {
         }
 
         // return final image
-        im.setImageBitmap(bmOut);
-    }
-
-    public void gray(View view) {
-        operation = Bitmap.createBitmap(bmp.getWidth(),bmp.getHeight(), bmp.getConfig());
-        double red = 0.33;
-        double green = 0.59;
-        double blue = 0.11;
-
-        for (int i = 0; i < bmp.getWidth(); i++) {
-            for (int j = 0; j < bmp.getHeight(); j++) {
-                int p = bmp.getPixel(i, j);
-                int r = Color.red(p);
-                int g = Color.green(p);
-                int b = Color.blue(p);
-
-                r = (int) red * r;
-                g = (int) green * g;
-                b = (int) blue * b;
-                operation.setPixel(i, j, Color.argb(Color.alpha(p), r, g, b));
-            }
-        }
-        im.setImageBitmap(operation);
+        return bmOut;
     }
 }

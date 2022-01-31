@@ -20,6 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SPassion">
+
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 FOR TESTING ONLY -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -50,19 +51,16 @@
             android:exported="true"
             android:noHistory="true" >
 <!--            &lt;!&ndash; This is to tell the app to start from login &ndash;&gt;-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-        <activity
-            android:name=".activities.LoginActivity"
-            android:exported="true">
             <!-- This is to tell the app to start from login -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".activities.MainActivity"

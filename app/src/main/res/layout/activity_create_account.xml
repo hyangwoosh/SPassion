@@ -191,6 +191,19 @@
                     android:textAllCaps="false"
                     app:backgroundTint="#F12B2B" />
 
+                <Button
+                    android:id="@+id/btnBackToLogin"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_bg"
+                    android:onClick="back"
+                    android:padding="10dp"
+                    android:text="Back To Login"
+                    android:textAllCaps="false"
+                    android:visibility="gone"
+                    app:backgroundTint="#F12B2B" />
                 <TextView
                     android:id="@+id/textVerification"
                     android:layout_width="wrap_content"
@@ -213,7 +226,6 @@
                     android:text="Resend Email"
                     android:onClick="resendEmail"
                     android:textAllCaps="false"
-
                     />
                 <TextView
                     android:id="@+id/timetext"

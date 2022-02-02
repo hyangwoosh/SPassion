@@ -25,7 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
     ConstraintLayout alert_layout;
     EditText email,password,confirmPassword;
     TextView timetext,textVerification,btnResend;
-    Button btnSignUp;
+    Button btnSignUp, btnBackToLogin;
     FirebaseAuth mAuth = LoginActivity.mAuth;
 
     @Override
@@ -49,6 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
         alert_layout.setVisibility(View.GONE);
         btnSignUp.setText("Sign Up");
         btnResend.setEnabled(false);
+        btnBackToLogin=findViewById(R.id.btnBackToLogin);
     }
 
     public void signUp(View view) {
@@ -90,7 +91,9 @@ public class SignUpActivity extends AppCompatActivity {
                             textVerification.setVisibility(View.VISIBLE);
                             timetext.setVisibility(View.VISIBLE);
                             btnResend.setEnabled(false);
-                            btnSignUp.setText("Back to Login");
+//                            btnSignUp.setText("Back to Login");
+                            btnSignUp.setVisibility(View.GONE);
+                            btnBackToLogin.setVisibility(View.VISIBLE);
                             StartCounter();
                         } else {
                             // If sign in fails, display a message to the user.
@@ -103,12 +106,16 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void resendEmail(View view) {
-
+        alert_layout.setVisibility(View.VISIBLE);
+        timetext.setVisibility(View.VISIBLE);
+        btnResend.setEnabled(false);
+        StartCounter();
     }
 
     public void closeAlert(View view) {
         alert_layout.setVisibility(View.GONE);
     }
+
     public void StartCounter(){
         new CountDownTimer(30000, 1000) {
 
@@ -118,6 +125,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
 
             public void onFinish() {
+                timetext.setVisibility(View.GONE);
                 btnResend.setEnabled(true);
             }
 

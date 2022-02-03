@@ -9,18 +9,27 @@ Contains features such as
 - Bottom Navigation
 - Shared PReferences
 
+# Introduction
+
+## Test Credentials
+Here are the login credentials for a test account
+```
+Username: test@ichat.sp.edu.sg
+Password: 12345678!
+```
+You could also use the signup feature to register for an account. The data is stored in the app's firebase authentication database.
+
+## Navigation
+The main pages of the app can be navigated via the bottom navigation bar
+
+Happy Testing!
+
+_For more details about the app, open up the ca2 documentation file_
+
 ## File structure
 com.example.spassion
 - activities
-  - LoginActivity.java
-  - CreateAccountActivity.java
-  - MainActivity.java
 - fragments
-  - HomeFragment.java
-  - ExploreFragment.java
-  - SignUpFragment.java
-  - EventsFragment.java
-  - ProfileFragment.java 
 
 ## Naming conventions
 - Java classes use PascalCasing

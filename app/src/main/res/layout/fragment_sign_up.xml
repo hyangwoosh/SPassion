@@ -13,6 +13,7 @@
         android:layout_marginTop="656dp"
         android:backgroundTint="@color/secondary"
         android:text="@string/sign_up_btn_sign_up"
+        android:onClick="handleCCASignUp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

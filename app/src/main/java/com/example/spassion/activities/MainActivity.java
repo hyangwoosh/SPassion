@@ -175,4 +175,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void handleCCASignUp(View view) {
+        Toast.makeText(MainActivity.this, "Your CCA application has been successfully submitted",
+                Toast.LENGTH_LONG).show();
+    }
 } // End of MainActivity
